@@ -18,10 +18,23 @@ export default function Home() {
 
   return (
     <section aria-labelledby="home-title">
-      <h1 id="home-title">Welcome to EduPath Advisor</h1>
-      <p className="muted">Your one-stop platform for education and career guidance.</p>
+      <div className="hero">
+        <div style={{ gridColumn: 'span 7' }}>
+          <div className="kicker">Your education compass</div>
+          <h1 id="home-title">Plan your path with clarity and confidence</h1>
+          <p>Take the quiz, explore courses, find nearby colleges, and track deadlines — all in one place.</p>
+          <div className="hero-cta">
+            <button className="button primary" onClick={() => navigate('/quiz')}>Start the Quiz</button>
+            <button className="button" onClick={() => navigate('/courses-careers')}>Explore Careers</button>
+          </div>
+        </div>
+        <div style={{ gridColumn: 'span 5' }}>
+          <div className="card" aria-hidden="true" style={{ height: 160, marginBottom: 12 }}></div>
+          <div className="card" aria-hidden="true" style={{ height: 120 }}></div>
+        </div>
+      </div>
 
-      <div style={{ margin: '12px 0' }}>
+      <div style={{ margin: '16px 0' }}>
         <label htmlFor="search" className="label">Quick search</label>
         <input id="search" className="input" placeholder="Search features..." value={query} onChange={e => setQuery(e.target.value)} />
       </div>
@@ -31,7 +44,7 @@ export default function Home() {
           <button
             key={card.to}
             className="card"
-            style={{ gridColumn: 'span 6', textAlign: 'left' }}
+            style={{ gridColumn: 'span 4', textAlign: 'left' }}
             onClick={() => navigate(card.to)}
           >
             <h3>{card.title}</h3>
