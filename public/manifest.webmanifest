@@ -1,0 +1,9 @@
+{
+  "name": "EduPath Advisor",
+  "short_name": "EduPath",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1a73e8",
+  "icons": []
+}
